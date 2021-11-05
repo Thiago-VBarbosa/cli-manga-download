@@ -19,7 +19,7 @@ manga_download <- function(what, chapters, path = "C:/", combine_pdf = FALSE, co
     source("utils/extract_img_links.r")
     manga_df <- extract_img_links(page_manga)
     
-    source("utils/manga")
+    source("utils/download_images.r")
     download_images(manga_df, manga, chapter)
     #gerando os diretórios onde serão armazenados os arquivos finais
     fs::dir_create(path_dest <- paste0(ifelse(substr(path, start = nchar(path), stop = nchar(path)) == "/",
