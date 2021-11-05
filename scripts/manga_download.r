@@ -18,22 +18,9 @@ manga_download <- function(what, chapters, path = "C:/", combine_pdf = FALSE, co
 
     source("utils/extract_img_links.r")
     manga_df <- extract_img_links(page_manga)
-
-    cat(paste("\nRealizando download:", manga, "- Capitulo", chapter,"\n"))
-    barra <- txtProgressBar(min = 0, max = length(manga_df$id), style = 3)
-    #realizando o download das imagens
-    for(i in 1:length(manga_df$id)){
-      download.file(url = as.character(manga_df$src[i]),
-                    destfile = file.path(tempdir(),
-                                      ifelse(length(stringr::str_extract_all(manga_df$id[i],"[0-9]")[[1]]) >= 2,
-                                            paste0(manga_df$id[i],".jpg"),
-                                            paste0(gsub("[0-9]", paste0(0,stringr::str_extract_all(manga_df$id[i],"[0-9]")[[1]]), manga_df$id[i]),".jpg"))),
-                    mode = "wb", quiet = TRUE)
-      setTxtProgressBar(barra,i)
-      if(i == length(manga_df$id))
-        cat("\nDownload concluido")
-    }
-    close(barra)
+    
+    source("utils/manga")
+    download_images(manga_df, manga, chapter)
     #gerando os diretórios onde serão armazenados os arquivos finais
     fs::dir_create(path_dest <- paste0(ifelse(substr(path, start = nchar(path), stop = nchar(path)) == "/",
                                               path, paste0(path,"/")), gsub(manga, pattern = " ", replacement = "-"))) #criando diretorio do manga especifico, caso nao exista
