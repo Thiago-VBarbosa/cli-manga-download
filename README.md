@@ -8,6 +8,10 @@ Fornece um conjunto de funcionalidades que permite a partir de linhas de
 código sintéticas o download e processamento automático de obras
 convertendo para formato PDF e MOBI (Kindle)
 
+Para baixar a ferramenta execute:
+
+`git clone https://github.com/Thiago-VBarbosa/cli-manga-download`
+
 ------------------------------------------------------------------------
 
 Os comandos abaixo tem como referência o diretório **"/scripts"**. No

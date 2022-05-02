@@ -10,6 +10,10 @@ CLI-manga_download
 
 Fornece um conjunto de funcionalidades que permite a partir de linhas de código sintéticas o download e processamento automático de obras convertendo para formato PDF e MOBI (Kindle)
 
+Para baixar a ferramenta execute:
+
+```git clone https://github.com/Thiago-VBarbosa/cli-manga-download ```
+
 ---
 
 Os comandos abaixo tem como referência o diretório **"/scripts"**. No Windows a execução do arquivo app.cmd abre o Prompt de comando no diretório **"/scripts"**. Em qualquer sistema operacional, basta abrir o terminal no diretório **"/scripts"**.
