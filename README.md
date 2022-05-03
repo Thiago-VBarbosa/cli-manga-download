@@ -29,9 +29,6 @@ funcionalidades rode:
 Caso as bibliotecas necessárias não estejam disponíveis, o comando acima
 fará a instalação.
 
-Uma vez instaladas as bibliotecas necessárias, as funcionalidades
-estarão disponíveis.
-
 Esta versão da ferramenta utiliza um banco de dados SQLite para
 armazenar e consultar as informações das obras cadastradas. Para fazer o
 download e configuração do banco de dados utilizado, basta executar o
