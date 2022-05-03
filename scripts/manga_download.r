@@ -5,7 +5,9 @@ args <- commandArgs(TRUE)
 manga_download <- function(what, chapters, path = "C:/", combine_pdf = FALSE, combine_mobi = FALSE){
   `%>%` <- magrittr::`%>%`
 
-  manga_list <- jsonlite::fromJSON("../register.JSON")
+  con <- DBI::dbConnect(RSQLite::SQLite(), "../db/mangas.s3db")
+  on.exit(DBI::dbDisconnect(con, add = TRUE))
+  manga_list <- DBI::dbGetQuery(con, "SELECT * FROM list_mangas")
   what <- match.arg(what, choices = manga_list$nome)
   
   if(!is.numeric(chapters))
@@ -49,7 +51,8 @@ manga_download <- function(what, chapters, path = "C:/", combine_pdf = FALSE, co
         {
           cliapp::cli_h1("\nGerando arquivo Mobi\n")
           cbz_file <- generate_cbz(path = path_dest1,
-            name = paste0("Chapter_",chapter), list_files = tempdir())
+            name = paste0("Chapter_",ifelse(nchar(chapter) >= 2, chapter, gsub("[0-9]", paste0(0,chapter), chapter))),
+            list_files = tempdir())
           convert_to_mobi(file = cbz_file, nome = manga, chapter = chapter)
           file.remove(cbz_file)
           cliapp::cli_alert_success("\nArquivo Mobi gerado\n")
