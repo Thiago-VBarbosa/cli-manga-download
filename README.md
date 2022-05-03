@@ -10,7 +10,7 @@ convertendo para formato PDF e MOBI (Kindle)
 
 Para baixar a ferramenta execute:
 
-`git clone https://github.com/Thiago-VBarbosa/cli-manga-download`
+`git clone https://github.com/Thiago-VBarbosa/cli-manga-download/tree/app-with-sqlite`
 
 ------------------------------------------------------------------------
 
@@ -31,6 +31,15 @@ fará a instalação.
 
 Uma vez instaladas as bibliotecas necessárias, as funcionalidades
 estarão disponíveis.
+
+Esta versão da ferramenta utiliza um banco de dados SQLite para
+armazenar e consultar as informações das obras cadastradas. Para fazer o
+download e configuração do banco de dados utilizado, basta executar o
+comando abaixo. Este comando irá baixar os arquivos do SQLite adequados
+ao seu sistema operacional e criar o banco de dados que será utilizado
+para inserção das obras.
+
+    Rscript utils/db_configure.r
 
 ------------------------------------------------------------------------
 
