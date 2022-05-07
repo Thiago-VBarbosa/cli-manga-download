@@ -12,7 +12,7 @@ Fornece um conjunto de funcionalidades que permite a partir de linhas de código
 
 Para baixar a ferramenta execute:
 
-```git clone https://github.com/Thiago-VBarbosa/cli-manga-download/tree/app-with-sqlite ```
+```git clone --branch app-with-sqlite https://github.com/Thiago-VBarbosa/cli-manga-download ```
 
 ---
 

@@ -10,7 +10,7 @@ convertendo para formato PDF e MOBI (Kindle)
 
 Para baixar a ferramenta execute:
 
-`git clone https://github.com/Thiago-VBarbosa/cli-manga-download/tree/app-with-sqlite`
+`git clone --branch app-with-sqlite https://github.com/Thiago-VBarbosa/cli-manga-download`
 
 ------------------------------------------------------------------------
 
